@@ -1,0 +1,17 @@
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+
+<h1>New books</h1>
+<%= form_with model:@book,url:'/books',local: true do |f| %>
+  <table>
+    <tr><th>title</th></tr>
+      <td><%= f.text_field :title %></td>
+    <tr><th>body</th></tr>
+      <td><%= f.text_area :body %></td>
+    <tr><th></th></tr>
+      <td><%= f.submit '送信' %></td>
+  </table>
+
+<% end %>
